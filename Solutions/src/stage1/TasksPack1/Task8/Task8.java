@@ -13,8 +13,8 @@ public class Task8 {
 
         int numbers = 0;
         int symbols = 0;
-        for (int i = 0; i < expression.length(); i++) {
-            if (tryParseInt(strmass[i])) {
+        for (String s : strmass) {
+            if (tryParseInt(s)) {
                 numbers++;
             } else {
                 symbols++;
@@ -32,29 +32,33 @@ public class Task8 {
         for (int i = 0; i < strList.size(); i++) {
             String str = strList.get(i);
             if (str.equals("*")) {
-                solveAndChangeList(i);
+                int res = Integer.parseInt(strList.get(i - 1)) * Integer.parseInt(strList.get(i + 1));
+                changeList(i,res);
                 i--;
             } else if (str.equals("/")) {
-                solveAndChangeList(i);
+                int res = Integer.parseInt(strList.get(i - 1)) / Integer.parseInt(strList.get(i + 1));
+                changeList(i,res);
                 i--;
             }
         }
         for (int i = 0; i < strList.size(); i++) {
+
             String str = strList.get(i);
             if (str.equals("+")) {
-                solveAndChangeList(i);
+                int res = Integer.parseInt(strList.get(i - 1)) + Integer.parseInt(strList.get(i + 1));
+                changeList(i,res);
                 i--;
             }
             if (str.equals("-")) {
-                solveAndChangeList(i);
+                int res = Integer.parseInt(strList.get(i - 1)) - Integer.parseInt(strList.get(i + 1));
+                changeList(i,res);
                 i--;
             }
         }
         System.out.println(strList.get(0));
     }
 
-    public static void solveAndChangeList(int i) {
-        int res = Integer.parseInt(strList.get(i - 1)) - Integer.parseInt(strList.get(i + 1));
+    public static void changeList(int i, int res) {
         strList.remove(i + 1);
         strList.remove(i);
         strList.remove(i - 1);
