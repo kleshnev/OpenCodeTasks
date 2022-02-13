@@ -1,9 +1,9 @@
 package stage1.TasksPack1.Bonus;
 
-public class BonusTask {
+public class Bonus {
     public static void main(String[] args) {
 
-        boolean res = hasOnlyTwoTrue(true, false, true, false);
+        boolean res = hasOnlyTwoTrue(true, false, false, true);
         System.out.println(res);
     }
 
