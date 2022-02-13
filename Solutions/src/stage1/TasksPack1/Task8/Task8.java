@@ -9,7 +9,7 @@ public class Task8 {
 
         Scanner in = new Scanner(System.in);
         String expression = in.nextLine();
-        String[] strmass = (expression.split("((?<=[*\\-+/])|(?=[*\\-+/]))"));
+       String[] strmass = (expression.split("((?<=[*\\-+/])|(?=[*\\-+/]))"));
 
         int numbers = 0;
         int symbols = 0;
@@ -41,6 +41,7 @@ public class Task8 {
                 i--;
             }
         }
+
         for (int i = 0; i < strList.size(); i++) {
 
             String str = strList.get(i);

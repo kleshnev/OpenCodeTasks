@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class Task6 {
     public static void main(String[] args) {
         String helloString = "Hello World!";
-        HashMap<Character, Integer> map = new HashMap();
+        HashMap<Character, Integer> map = new HashMap<>();
 
         for (int i = 0; i < helloString.length(); i++) {
             char thisChar = helloString.charAt(i);
