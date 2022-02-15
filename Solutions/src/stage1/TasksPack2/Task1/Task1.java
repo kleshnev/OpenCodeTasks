@@ -7,7 +7,7 @@ public class Task1 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int count = in.nextInt();
-        System.out.println(covertSequenceToString(getFibonacciSequence(count)));
+        System.out.println(convertSequenceToString(getFibonacciSequence(count)));
 
     }
 
@@ -21,7 +21,7 @@ public class Task1 {
 
     }
 
-    public static String covertSequenceToString(ArrayList<Integer> list) {
+    public static String convertSequenceToString(ArrayList<Integer> list) {
         StringBuilder builder = new StringBuilder();
         int listSize = list.size();
         for (int i = 0; i < listSize; i++) {
