@@ -1,8 +1,6 @@
 package stage1.TasksPack2.Task4;
 
-import java.security.KeyStore;
 import java.util.*;
-import java.util.Map.Entry;
 
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toList;
@@ -13,27 +11,28 @@ public class Task4 {
         String inputStr = in.nextLine();
         String[] inputArray = inputStr.split(" ");
 
-        List<String> max = Arrays.stream(inputArray)
+        List<String> maxElements = findMaxElements(inputArray);
+        List<String> minElements = findMinElements(inputArray);
+
+        printOutputResult(maxElements, maxElements.get(0).length(), "Максимальное");
+        printOutputResult(minElements, minElements.get(0).length(), "Минимальное");
+    }
+
+    public static List<String> findMaxElements(String[] array) {
+        return Arrays.stream(array)
                 .collect(groupingBy(String::length, TreeMap::new, toList()))
                 .lastEntry()
                 .getValue();
+    }
 
-
-        List<String> min = Arrays.stream(inputArray)
+    public static List<String> findMinElements(String[] array) {
+        return Arrays.stream(array)
                 .collect(groupingBy(String::length, TreeMap::new, toList()))
                 .firstEntry()
                 .getValue();
-
-
-        System.out.println(String.format("Максимальное значение символов - %d", max.get(0).length()));
-        getReapetedEntries(max)
-                .forEach((key, value) -> System.out.println(key + " - " + value + " повторения"));
-        System.out.println(String.format("Минимальное значение символов - %d", min.get(0).length()));
-        getReapetedEntries(min)
-                .forEach((key, value) -> System.out.println(key + " - " + value + " повторения"));
     }
-    public static HashMap<String, Integer> getReapetedEntries(List<String> words)
-    {
+
+    public static HashMap<String, Integer> getRepeatedEntries(List<String> words) {
         HashMap<String, Integer> repeatedEntries = new HashMap<>();
         for (String str : words) {
             if (repeatedEntries.containsKey(str)) {
@@ -43,5 +42,12 @@ public class Task4 {
             }
         }
         return repeatedEntries;
+    }
+
+    public static void printOutputResult(List<String> resultList, int listLength, String userText) {
+        System.out.println(String.format("%s значение символов - %d.", userText, listLength));
+        getRepeatedEntries(resultList)
+                .forEach((key, value) -> System.out.println(String.format("%s - повторяется %d р. ", key, value)));
+        System.out.println();
     }
 }
