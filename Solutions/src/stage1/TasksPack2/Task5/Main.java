@@ -8,7 +8,7 @@ public class Main {
         String inputLine = in.nextLine();
         String[] inputArray = inputLine.split(" ");
         Sentence sentence = new Sentence(inputArray);
-
         System.out.println("Модель создана.");
+
     }
 }
