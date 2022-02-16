@@ -13,8 +13,11 @@ public class Task1 {
 
     public static ArrayList<Integer> getFibonacciSequence(int count) {
         ArrayList<Integer> list = new ArrayList<>();
+        if (count == 0) return list;
         list.add(0);
-        list.add(1);
+        if (count > 1) {
+            list.add(1);
+        }
         for (int i = 2; i < count; i++)
             list.add(list.get(i - 2) + list.get(i - 1));
         return list;
