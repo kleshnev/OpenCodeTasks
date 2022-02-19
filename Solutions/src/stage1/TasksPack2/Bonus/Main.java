@@ -7,16 +7,16 @@ public class Main {
         MyIntList myList = new MyIntList();
         Scanner in = new Scanner(System.in);
         for (; ; ) {
-            System.out.println("Исходный массив: \n" +
-                    myList.toString() +
-                    "\nВыберите действие:" +
+            System.out.println("— Длина массива - " + myList.getLength() +
+                    "\n— Исходный массив: \n" + myList.toString() +
+                    "\n— Выберите операцию:" +
                     "\n1. Добавить элемент" +
                     "\n2. Вставить элемент по индексу" +
                     "\n3. Удалить элемент по индексу" +
                     "\n4. Отсортировать список:" +
                     "\n5. Очистить список:" +
                     "\n6. Завершить работу" +
-                    "\nВведите номер операции:");
+                    "\n— Введите номер операции:");
             int userInput = in.nextInt();
             switch (userInput) {
                 case 1: {
