@@ -54,7 +54,7 @@ public class MyIntList {
     }
 
     public void sort() {
-        /* сортировка выбором */
+        /* Сортировка выбором */
         for (int i = 0; i < array.length; i++) {
 
             int minIndex = i;
