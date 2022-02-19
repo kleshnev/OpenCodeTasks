@@ -14,7 +14,8 @@ public class Main {
                     "\n2. Вставить элемент по индексу" +
                     "\n3. Удалить элемент по индексу" +
                     "\n4. Отсортировать список:" +
-                    "\n5. Завершить работу" +
+                    "\n5. Очистить список:" +
+                    "\n6. Завершить работу" +
                     "\nВведите номер операции:");
             int userInput = in.nextInt();
             switch (userInput) {
@@ -46,6 +47,11 @@ public class Main {
                     break;
                 }
                 case 5: {
+                    myList.clear();
+                    System.out.println("Список очищен!");
+                    return;
+                }
+                case 6: {
                     System.out.println("Работа завершена!");
                     return;
                 }
