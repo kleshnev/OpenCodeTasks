@@ -75,7 +75,7 @@ public class MyListTests extends Assert {
             MyIntList myList = new MyIntList();
             int[] testArray = new int[]{1, 2, 3, 4, 5, 6};
             myList.setArray(testArray);
-            myList.insert(999, 3);
+            myList.insert(999, myList.getLength()/2);
             assertArrayEquals(new int[]{1, 2, 3, 999, 4, 5, 6}, myList.getArray());
         }
 
