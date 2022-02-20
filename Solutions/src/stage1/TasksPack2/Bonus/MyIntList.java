@@ -17,8 +17,7 @@ public class MyIntList {
      *  insert можно применить для вставки в конец, для этого номер позиции должен быть array.length+1
      *  Индексация идет уже у расширенного массива, а не исходного, поэтому IndexOutOfBounds не будет.
      *  Вставка в середину:
-     *  Для четного исходного массива - pos = array.length/2
-     *  Для нечетного - (array.length+1)/2 -1
+     *  pos = array.length/2
      */
     public void insert(int element, int pos) {
         if (pos > array.length + 1) {
