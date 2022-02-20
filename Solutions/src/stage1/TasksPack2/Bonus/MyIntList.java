@@ -7,13 +7,6 @@ public class MyIntList {
         return array.length;
     }
 
-    public int[] getArray() {
-        return array;
-    }
-
-    public void setArray(int[] newArray) {
-        array = newArray;
-    }
 
     public void add(int num) {
         expandArray();
@@ -102,5 +95,11 @@ public class MyIntList {
         array = tempArray;
     }
 
+    public int[] getArray() {
+        return array;
+    }
 
+    public void setArray(int[] newArray) {
+        array = newArray;
+    }
 }
