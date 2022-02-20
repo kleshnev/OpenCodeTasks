@@ -37,13 +37,22 @@ public class Main {
                     int element = in.nextInt();
                     System.out.println("Введите номер индекса:");
                     int pos = in.nextInt();
+                    while (pos > myList.getLength()) {
+                        System.out.println("Неверное значение, введите новое значение:");
+                        pos = in.nextInt();
+                    }
                     myList.insert(element, pos);
                     System.out.println("Элемент вставлен по индексу");
                     break;
                 }
                 case 4: {
                     System.out.println("Введите индекс для удаления:");
-                    myList.remove(in.nextInt());
+                    int pos = in.nextInt();
+                    while (pos > myList.getLength() - 1) {
+                        System.out.println("Неверное значение, введите новое значение:");
+                        pos = in.nextInt();
+                    }
+                    myList.remove(pos);
                     System.out.println("Элемент удален по индексу!");
                     break;
                 }
