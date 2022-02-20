@@ -6,8 +6,6 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import stage1.TasksPack2.Bonus.MyIntList;
 
-import java.util.Arrays;
-
 public class MyListTests extends Assert {
 
     @Nested
@@ -17,9 +15,9 @@ public class MyListTests extends Assert {
         public void sortPositiveSequence() {
             MyIntList myList = new MyIntList();
             int[] testArray = new int[]{10, 7, 5, 3, 2, 1, 100};
-            myList.array = Arrays.stream(testArray).toArray();
+            myList.setArray(testArray);
             myList.sort();
-            assertArrayEquals(new int[]{1, 2, 3, 5, 7, 10, 100}, myList.array);
+            assertArrayEquals(new int[]{1, 2, 3, 5, 7, 10, 100}, myList.getArray());
         }
 
         @Test
@@ -27,9 +25,9 @@ public class MyListTests extends Assert {
         public void sortNegativeSequence() {
             MyIntList myList = new MyIntList();
             int[] testArray = new int[]{-10, -7, -5, -3, -2, -1, -100};
-            myList.array = Arrays.stream(testArray).toArray();
+            myList.setArray(testArray);
             myList.sort();
-            assertArrayEquals(new int[]{-100, -10, -7, -5, -3, -2, -1}, myList.array);
+            assertArrayEquals(new int[]{-100, -10, -7, -5, -3, -2, -1}, myList.getArray());
         }
 
         @Test
@@ -37,9 +35,9 @@ public class MyListTests extends Assert {
         public void sortRepeatedNumbers() {
             MyIntList myList = new MyIntList();
             int[] testArray = new int[]{2, 1, 1, 1, 1, 100, 1};
-            myList.array = Arrays.stream(testArray).toArray();
+            myList.setArray(testArray);
             myList.sort();
-            assertArrayEquals(new int[]{1, 1, 1, 1, 1, 2, 100}, myList.array);
+            assertArrayEquals(new int[]{1, 1, 1, 1, 1, 2, 100}, myList.getArray());
         }
     }
 
@@ -52,7 +50,7 @@ public class MyListTests extends Assert {
             myList.add(1);
             myList.add(2);
             myList.add(3);
-            assertArrayEquals(new int[]{1, 2, 3}, myList.array);
+            assertArrayEquals(new int[]{1, 2, 3}, myList.getArray());
         }
     }
 
@@ -63,9 +61,9 @@ public class MyListTests extends Assert {
         public void removeNumbersFromList() {
             MyIntList myList = new MyIntList();
             int[] testArray = new int[]{1, 2, 3, 4, 5};
-            myList.array = Arrays.stream(testArray).toArray();
+            myList.setArray(testArray);
             myList.remove(3);
-            assertArrayEquals(new int[]{1, 2, 3, 5}, myList.array);
+            assertArrayEquals(new int[]{1, 2, 3, 5}, myList.getArray());
         }
     }
 
@@ -76,9 +74,9 @@ public class MyListTests extends Assert {
         public void insertElementToMiddleOfArray() {
             MyIntList myList = new MyIntList();
             int[] testArray = new int[]{1, 2, 3, 4, 5, 6};
-            myList.array = Arrays.stream(testArray).toArray();
+            myList.setArray(testArray);
             myList.insert(999, 3);
-            assertArrayEquals(new int[]{1, 2, 3, 999, 4, 5, 6}, myList.array);
+            assertArrayEquals(new int[]{1, 2, 3, 999, 4, 5, 6}, myList.getArray());
         }
 
         @Test
@@ -86,9 +84,9 @@ public class MyListTests extends Assert {
         public void insertElementToStartOfArray() {
             MyIntList myList = new MyIntList();
             int[] testArray = new int[]{1, 2, 3, 4, 5, 6};
-            myList.array = Arrays.stream(testArray).toArray();
+            myList.setArray(testArray);
             myList.insert(999, 0);
-            assertArrayEquals(new int[]{999, 1, 2, 3, 4, 5, 6}, myList.array);
+            assertArrayEquals(new int[]{999, 1, 2, 3, 4, 5, 6}, myList.getArray());
         }
 
         @Test
@@ -96,9 +94,9 @@ public class MyListTests extends Assert {
         public void insertElementToEndOfArray() {
             MyIntList myList = new MyIntList();
             int[] testArray = new int[]{1, 2, 3, 4, 5, 6};
-            myList.array = Arrays.stream(testArray).toArray();
-            myList.insert(999, myList.array.length);
-            assertArrayEquals(new int[]{1, 2, 3, 4, 5, 6, 999}, myList.array);
+            myList.setArray(testArray);
+            myList.insert(999, myList.getLength());
+            assertArrayEquals(new int[]{1, 2, 3, 4, 5, 6, 999}, myList.getArray());
         }
     }
 
@@ -109,9 +107,9 @@ public class MyListTests extends Assert {
         public void clearArrayShouldBeEmpty() {
             MyIntList myList = new MyIntList();
             int[] testArray = new int[]{1, 2, 3};
-            myList.array = Arrays.stream(testArray).toArray();
+            myList.setArray(testArray);
             myList.clear();
-            assertArrayEquals(new int[]{}, myList.array);
+            assertArrayEquals(new int[]{}, myList.getArray());
         }
     }
 

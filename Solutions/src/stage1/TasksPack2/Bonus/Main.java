@@ -10,12 +10,13 @@ public class Main {
             System.out.println("— Длина массива - " + myList.getLength() +
                     "\n— Исходный массив: \n" + myList.toString() +
                     "\n— Выберите операцию:" +
-                    "\n1. Добавить элемент" +
-                    "\n2. Вставить элемент по индексу" +
-                    "\n3. Удалить элемент по индексу" +
-                    "\n4. Отсортировать список:" +
-                    "\n5. Очистить список:" +
-                    "\n6. Завершить работу" +
+                    "\n\n1. Добавить элемент" +
+                    "\n2. Вставить элемент в середину" +
+                    "\n3. Вставить элемент по индексу" +
+                    "\n4. Удалить элемент по индексу" +
+                    "\n5. Отсортировать список" +
+                    "\n6. Очистить список" +
+                    "\n7. Завершить работу" +
                     "\n— Введите номер операции:");
             int userInput = in.nextInt();
             switch (userInput) {
@@ -26,32 +27,37 @@ public class Main {
                     break;
                 }
                 case 2: {
-                    System.out.println("Введите элемент:");
+                    System.out.println("Введите элемент для вставки в середину:");
+                    myList.insert(in.nextInt(), myList.getLength() / 2);
+                    System.out.println("Элемент вставлен в середину");
+                    break;
+                }
+                case 3: {
+                    System.out.println("Введите элемент для вставки по индексу:");
                     int element = in.nextInt();
-                    System.out.println("Введите индекс:");
+                    System.out.println("Введите номер индекса:");
                     int pos = in.nextInt();
                     myList.insert(element, pos);
                     System.out.println("Элемент вставлен по индексу");
                     break;
                 }
-                case 3: {
+                case 4: {
                     System.out.println("Введите индекс для удаления:");
-                    int pos = in.nextInt();
-                    myList.remove(pos);
+                    myList.remove(in.nextInt());
                     System.out.println("Элемент удален по индексу!");
                     break;
                 }
-                case 4: {
+                case 5: {
                     myList.sort();
                     System.out.println("Лист отсортирован!");
                     break;
                 }
-                case 5: {
+                case 6: {
                     myList.clear();
                     System.out.println("Список очищен!");
-                    return;
+                    break;
                 }
-                case 6: {
+                case 7: {
                     System.out.println("Работа завершена!");
                     return;
                 }

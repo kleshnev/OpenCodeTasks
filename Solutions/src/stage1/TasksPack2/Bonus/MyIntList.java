@@ -1,10 +1,18 @@
 package stage1.TasksPack2.Bonus;
 
 public class MyIntList {
-    public int[] array = new int[0];
+    private int[] array = new int[0];
 
     public int getLength() {
         return array.length;
+    }
+
+    public int[] getArray() {
+        return array;
+    }
+
+    public void setArray(int[] newArray) {
+        array = newArray;
     }
 
     public void add(int num) {
@@ -12,7 +20,17 @@ public class MyIntList {
         array[array.length - 1] = num;
     }
 
+    /* Элемент вставляется по индексу(pos), и все элементы после номера pos двигаются вправо.
+     *  insert можно применить для вставки в конец, для этого номер позиции должен быть array.length+1
+     *  Индексация идет уже у расширенного массива, а не исходного, поэтому IndexOutOfBounds не будет.
+     *  Вставка в середину:
+     *  Для четного исходного массива - pos = array.length/2
+     *  Для нечетного - (array.length+1)/2 -1
+     */
     public void insert(int element, int pos) {
+        if (pos > array.length + 1) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
         expandArray();
         if (array.length - 1 - pos >= 0)
             System.arraycopy(array, pos, array, pos + 1, array.length - 1 - pos);
