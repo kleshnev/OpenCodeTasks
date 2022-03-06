@@ -13,7 +13,6 @@ import java.util.stream.Collectors;
 public class Main {
     public static void main(String[] args) {
         try {
-            //Path source = Paths.get();
             File fileInput = new File("Solutions/src/stage1/TasksPack4/Task7/text.txt");
             File fileResult = new File("Solutions/src/stage1/TasksPack4/Task7/result.txt");
             Scanner in = new Scanner(fileInput);
